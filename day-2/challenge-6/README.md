@@ -65,7 +65,7 @@ ctf{mining_gold_like_goldfish}
 
 ```
 (gdb) x/8xw $esp
-0xffffd2d0:     0x79ef55a0      0x41414141      0x79ef55a0      0xc7d72900
+0xffffd2d0:     0x79ef55a0      0x41414141      0x79ef55a0      0x26eace00
 0xffffd2e0:     0x08048987      0xffffd3a4      0xffffd2f8      0x080488e6
 ```
 
