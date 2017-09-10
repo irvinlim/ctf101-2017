@@ -3,7 +3,7 @@
 ## Type of challenge
 
 - Obtaining shell
-- Shellcode (given)
+- Return to shellcode
 
 ---
 
