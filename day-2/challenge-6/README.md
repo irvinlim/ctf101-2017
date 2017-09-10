@@ -53,6 +53,22 @@ ctf{mining_gold_like_goldfish}
 - We know the address of `seed`, from the offset from what we found earlier. 
     - `print &seed` gives us `0xffffd2d4`
     - Contents of `0xffffd2d4` = `0x41414141` (or 1094795585 in decimal)
+
+```
+(gdb) x/8xw $esp
+0xffffd2d0:     0x41414141      0x41414141      0xffffd200      0x26eace00
+0xffffd2e0:     0x08048987      0xffffd3a4      0xffffd2f8      0x080488e6
+```
+
+- After `scanf` and `srand(seed)`:
+    - We can see that `secret` (`0xffffd2d8`) is equal to `input` (`0xffffd2d0`).
+
+```
+(gdb) x/8xw $esp
+0xffffd2d0:     0x79ef55a0      0x41414141      0x79ef55a0      0xc7d72900
+0xffffd2e0:     0x08048987      0xffffd3a4      0xffffd2f8      0x080488e6
+```
+
 - We can predictably know the value of `rand()` if we know the seed value.
     - See `exploit.c` which uses the same seed value to generate a payload.
     - Actually, we can immediately extract out the value of `secret` from `gdb` itself, but let's assume that the seed is slightly more complicated (involves `time()` or something), so we create a C program to generate a payload which can be piped to `nc`.
