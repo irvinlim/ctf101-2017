@@ -9,4 +9,4 @@ This repository contains my working files for the workshop, including notes and 
 See the workshop repositories:
 
 - [Day 1: Web Security](https://github.com/NUSGreyhats/ctf101-web-2017)
-- Day 2: Systems Security
+- [Day 2: Systems Security](https://github.com/niktay/ctf101-systems-security-2017)
